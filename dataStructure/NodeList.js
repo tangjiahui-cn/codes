@@ -54,6 +54,7 @@ class NodeList {
             this.tail.next = null
         } else {
             this.tail.next = node.prev
+            node.prev.next = node.next
         }
 
         this.length--
