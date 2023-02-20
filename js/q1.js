@@ -52,7 +52,6 @@ function concurrentRequest2 (requestArr = [], concurrent = 3) {
             console.log('弹出: ', res)
             concurrentArr.splice(concurrentArr.indexOf(newRequest), 1)
 
-            if (!concurrentArr.length) return
             if (i >= requestArr.length) return
             concurrentArr.push(createNewRequest(requestArr[i++]))
             return res
