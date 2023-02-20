@@ -6,7 +6,7 @@
  */
 const timeoutArr = [1000, 3000, 2000, 9000, 8000, 7000, 5000, 3000, 1000, 700]
 const requestArr = timeoutArr.map(timeout => () => query(timeout))
-concurrentRequest(requestArr, 3)
+concurrentRequest2(requestArr, 3)
 
 function query (timeout) {
     return new Promise (resolve => {
@@ -14,6 +14,7 @@ function query (timeout) {
     })
 }
 
+// 方法一：使用Promise.race
 function concurrentRequest (requestArr = [], concurrent = 3) {
     let i = concurrent
     const concurrentArr = requestArr.slice(0, concurrent).map(createNewRequest)
@@ -38,5 +39,24 @@ function concurrentRequest (requestArr = [], concurrent = 3) {
                 run(concurrentArr)
             }
         })
+    }
+}
+
+// 方法二：删除请求时新增
+function concurrentRequest2 (requestArr = [], concurrent = 3) {
+    let i = concurrent
+    const concurrentArr = requestArr.slice(0, concurrent).map(createNewRequest)
+
+    function createNewRequest (request) {
+        const newRequest = request().then(res => {
+            console.log('弹出: ', res)
+            concurrentArr.splice(concurrentArr.indexOf(newRequest), 1)
+
+            if (!concurrentArr.length) return
+            if (i >= requestArr.length) return
+            concurrentArr.push(createNewRequest(requestArr[i++]))
+            return res
+        })
+        return newRequest
     }
 }
