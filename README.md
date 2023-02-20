@@ -12,7 +12,7 @@ a code library for daily training.
 - [3、线性队列](./dataStructure/Queue.js)
 
 ## handlWriteSource
-- [1、手写 new](./handWriteSource/INew.js.js)
+- [1、手写 new](./handWriteSource/INew.js)
 - [1、手写 call](./handWriteSource/ICall.js)
 
 ## js
