@@ -14,6 +14,7 @@ a code library for daily training.
 ## handlWriteSource
 - [1、手写 new](./handWriteSource/INew.js)
 - [1、手写 call](./handWriteSource/ICall.js)
+- [1、手写 apply](./handWriteSource/IApply.js)
 
 ## js
 - [1、有10个异步请求，如何保持同时3个并发？](./js/q1.js)
