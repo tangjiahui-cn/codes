@@ -1,11 +1,11 @@
 /**
- * 手写call
+ * 手写apply
  * 
- * At 2023/2/20
+ * At 2023/2/21
  * By TangJiaHui
  * 
  * 
- * 手写call操作：
+ * 手写apply操作：
  * 1、在绑定对象o上创建一个临时id
  * 2、在临时id上绑定执行函数
  * 3、运行绑定对象上临时id对应的执行函数，保存结果
@@ -13,7 +13,7 @@
  * 5、返回结果
  */
 
-Function.prototype.ICall = function (o, ...args) {
+Function.prototype.IApply = function (o, args = []) {
     const tempFn = Symbol('')
     o[tempFn] = this
     const result = o[tempFn]?.(...args)
@@ -32,5 +32,5 @@ function show (nameProp, ageProp) {
     console.log(this?.[nameProp], this?.[ageProp])
 }
 
-show.call(obj, 'name', 'age')
-show.ICall(obj, 'name', 'age')
+show.apply(obj, ['name', 'age'])
+show.IApply(obj, ['name', 'age'])
