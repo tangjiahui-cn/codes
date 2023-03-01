@@ -13,22 +13,24 @@
  * 4、如果该函数没有返回对象，则返回this。否则，返回对象。
  */
 
-function myNew (fn, ...args) {
+function myNew(fn, ...args) {
     const o = {};
     o.__proto__ = fn.prototype;
-    fn.apply(o, args);
-    return o;
+    const result = fn.apply(o, args);
+    return (typeof result === 'object' && result) ? result: o;
 }
 
 // Test
-function Test (name, age) {
+function Test(name, age) {
     this.name = name || 'tjh'
     this.age = age || 23
 
-    this.show =function () {
+    this.show = function () {
         console.log(this.name)
     }
 }
 
-new Test('ttjjhh', 2233).show()
-myNew(Test, 'ttjjhh', 2233).show()
+new Test('ttjjhh', 2233)?.show?.()
+myNew(Test, 'ttjjhh', 2233)?.show?.()
+console.log(myNew(Test, 'ttjjhh', 2233))
+console.log(new Test('ttjjhh', 2233))
