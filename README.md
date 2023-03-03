@@ -19,6 +19,7 @@ a code library for daily training.
 - [2、手写 call](./handWriteSource/ICall.js)
 - [3、手写 apply](./handWriteSource/IApply.js)
 - [4、手写 promise](./handWriteSource/IPromise.js)
+- [5、手写 debounce](./handWriteSource/IDebounce.js)
 
 ## js
 - [1、有10个异步请求，如何保持同时3个并发？](./js/q1.js)
