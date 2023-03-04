@@ -52,7 +52,7 @@ class IPromise {
         return new IPromise((resolveNext, rejectNext) => {
 
             const fulfilled = () => {
-                const v = resolveThen(this._value)
+                const v = resolveThen?.(this._value)
                 if (isPromise(v)) {
                     v.then(resolveNext, rejectNext)
                     return
@@ -61,7 +61,7 @@ class IPromise {
             }
 
             const rejected = () => {
-                const v = rejectThen(this._value)
+                const v = rejectThen?.(this._value)
                 if (isPromise(v)) {
                     v.then(resolveNext, rejectNext)
                     return
@@ -81,6 +81,31 @@ class IPromise {
                     rejected()
                     break;
             }
+        })
+    }
+
+    static race (pmArray) {
+        return new IPromise((resolve, reject) => {
+            pmArray.forEach(pm => {
+                pm.then(resolve, reject)
+            })
+        })
+    }
+
+    static all (pmArray) {
+        let result = []
+        return new IPromise((resolve, reject) => {
+            pmArray.forEach(pm => {
+                pm.then(
+                    res => {
+                        result.push(res)
+                        if (result.length === pmArray.length) {
+                            resolve(result)
+                        }
+                    },
+                    reject
+                )
+            })
         })
     }
 }
@@ -110,3 +135,19 @@ new IPromise(resolve => {
 }).then(res => {
     console.log('3 -> ', res) // 3 -> 1000
 })
+
+// race
+IPromise.race([
+    new IPromise(res => setTimeout(() => res(2000), 2000)),
+    new IPromise(res => setTimeout(() => res(1000), 1000)),
+    new IPromise((_, rej) => setTimeout(() => rej(500), 500)),
+    new IPromise(res => setTimeout(() => res(1500), 1500)),
+]).then(res => console.log('race: ', res), e => console.log('race error: ', e))
+
+// all
+IPromise.all([
+    new IPromise(res => setTimeout(() => res(2000), 2000)),
+    new IPromise(res => setTimeout(() => res(1000), 1000)),
+    new IPromise(res => setTimeout(() => res(500), 500)),
+    new IPromise(res => setTimeout(() => res(1500), 1500)),
+]).then(res => console.log('all: ', res), e => console.log('all error: ', e))
