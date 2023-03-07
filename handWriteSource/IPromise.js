@@ -108,8 +108,15 @@ class IPromise {
             })
         })
     }
-}
 
+    static resolve (value) {
+        return new IPromise((resolve) => resolve(value))
+    }
+
+    static reject (error) {
+        return new IPromise((_, reject) => reject(error))
+    }
+}
 
 // 测试代码
 new IPromise(resolve => {
