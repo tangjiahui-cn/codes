@@ -18,12 +18,12 @@ function IDebounce (fn, delay) {
 }
 
 console.time()
-const debounceSearch = IDebounce(v => {
+const debounceSearch = IDebounce(() => {
     console.timeEnd() // 打印大于等于 2s
 }, 1000)
 
-debounceSearch(1, 2)
+debounceSearch()
 setTimeout(() => {
-    debounceSearch(2, 2)
+    debounceSearch()
     setTimeout(() => debounceSearch(), 500)
 }, 500)
