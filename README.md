@@ -23,5 +23,7 @@ a code library for daily training.
 - [6、手写 throttle](./handWriteSource/IThrottle.js)
 - [7、手写 setInterval](./handWriteSource/ISetInterval.js)
 - [8、手写 发布-订阅模式](./handWriteSource/IObserver.js)
+- [9、手写 IPipe](./handWriteSource/IPipe.js)
+- [10、手写 IPipeAsync](./handWriteSource/IPipeAsync.js)
 ## js
 - [1、有10个异步请求，如何保持同时3个并发？](./js/q1.js)
