@@ -1,18 +1,19 @@
 /**
- * 异步Pipe
+ * 异步compose
  * 
  * At 2023/03/12
  * By TangJiaHui
- * Tips 从左到右
+ * Tips 从右到左
  */
 
-function IPipeAsync (...fnArray) {
+function IComposeAsync (...args) {
     return function (arg) {
-        return fnArray.reduce(async (result, fn) => {
+        return args.reduceRight(async (result, fn) => {
             return fn(await result)
         }, arg)
     }
 }
+
 
 // test
 const fnA = (n) => new Promise(resolve => setTimeout(() => resolve(`${n}A` ), 500))
@@ -20,11 +21,11 @@ const fnB = (n) => new Promise(resolve => setTimeout(() => resolve(`${n}B` ), 50
 const fnC = (n) => new Promise(resolve => setTimeout(() => resolve(`${n}C` ), 500))
 const fnD = (n) => new Promise(resolve => setTimeout(() => resolve(`${n}D` ), 500))
 
-const result = IPipeAsync(
+const result = IComposeAsync(
     fnA,
     fnB,
     fnC,
     fnD,
 )(1)
 
-result.then(res => console.log(res)) // 1ABCD
+result.then(res =>  console.log(res)) // 1DCBA

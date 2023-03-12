@@ -14,7 +14,7 @@ a code library for daily training.
 - [2、链表](./dataStructure/NodeList.js)
 - [3、线性队列](./dataStructure/Queue.js)
 
-## handlWriteSource
+## handWriteSource
 - [1、手写 new](./handWriteSource/INew.js)
 - [2、手写 call](./handWriteSource/ICall.js)
 - [3、手写 apply](./handWriteSource/IApply.js)
@@ -25,5 +25,7 @@ a code library for daily training.
 - [8、手写 发布-订阅模式](./handWriteSource/IObserver.js)
 - [9、手写 IPipe](./handWriteSource/IPipe.js)
 - [10、手写 IPipeAsync](./handWriteSource/IPipeAsync.js)
+- [11、手写 ICompose](./handWriteSource/IPipeAsync.js)
+- [12、手写 IComposeAsync](./handWriteSource/IPipeAsync.js)
 ## js
 - [1、有10个异步请求，如何保持同时3个并发？](./js/q1.js)

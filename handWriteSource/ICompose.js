@@ -1,15 +1,15 @@
 /**
- * 手写pipe
+ * 手写compose
  * 
  * At 2023/03/12
  * By TangJiaHui
- * Tips 从左到右
+ * Tips 从右到左
  */
 
-function IPipe (...fnArray) {
+function ICompose (...args) {
     return function (arg) {
-        return fnArray.reduce((result, fn) => {
-            return fn?.(result)
+        return args.reduceRight((result, fn) => {
+            return fn(result)
         }, arg)
     }
 }
@@ -21,11 +21,11 @@ const fnB = (n) => `${n}B`
 const fnC = (n) => `${n}C` 
 const fnD = (n) => `${n}D` 
 
-const result = IPipe(
+const result = ICompose(
     fnA,
     fnB,
     fnC,
     fnD,
 )(1)
 
-console.log(result) // 1ABCD
+console.log(result) // 1DCBA
