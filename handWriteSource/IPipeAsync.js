@@ -7,7 +7,7 @@
  */
 
 function IPipeAsync (...fnArray) {
-    return function (arg) {
+    return async function (arg) {
         return fnArray.reduce(async (result, fn) => {
             return fn(await result)
         }, arg)

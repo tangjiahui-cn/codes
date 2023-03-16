@@ -7,7 +7,7 @@
  */
 
 function IComposeAsync (...args) {
-    return function (arg) {
+    return async function (arg) {
         return args.reduceRight(async (result, fn) => {
             return fn(await result)
         }, arg)
