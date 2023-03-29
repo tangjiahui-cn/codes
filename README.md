@@ -31,5 +31,6 @@ a code library for daily training.
 - [12、手写 IComposeAsync](./handWriteSource/IPipeAsync.js)
 - [13、手写 ISetTimeout](./handWriteSource/ISetTimeout.js)
 - [14、手写 IArrayPrototype（数组原型方法）](./handWriteSource/IArrayPrototype.js)
+- [15、手写 ICheckType（判断js元素类型方法）](./handWriteSource/ICheckType.js)
 ## js
 - [1、有10个异步请求，如何保持同时3个并发？](./js/q1.js)
