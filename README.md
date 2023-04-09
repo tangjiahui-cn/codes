@@ -23,6 +23,7 @@ a code library for daily training.
 - [14、手写 IArrayPrototype（数组原型方法）](./handWriteSource/IArrayPrototype.js)
 - [15、手写 ICheckType（判断js元素类型方法）](./handWriteSource/ICheckType.js)
 - [16、手写 IAsync](./handWriteSource/IAsync.js)
+- [16、手写 IInstancePool](./handWriteSource/IInstancePool.js)
 
 ## leecode
 - [1、两数之和](./leecode/hot100/1_twoSum.js)
