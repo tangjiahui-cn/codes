@@ -17,6 +17,12 @@ function myNew(fn, ...args) {
     const o = {};
     o.__proto__ = fn.prototype;
     const result = fn.apply(o, args);
+
+    // result是执行构造函数的结果
+    // 如果fn 是构造函数(函数内无返回)，则这个值为undefined，返回 o（此时o绑定了上下文）
+    // 如果fn 不是构造函数，
+    // -- 如果result 是对象，则返回函数结果 result
+    // -- 否则，返回绑定了上下文的对象 o
     return (typeof result === 'object' && result) ? result: o;
 }
 
