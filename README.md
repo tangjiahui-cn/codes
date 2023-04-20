@@ -33,6 +33,7 @@ a code library for daily training.
 
 ### 经典算法
 - [1、LRU缓存](./leecode/LRU.js)
+- [2、LRU缓存（线性表实现）](./leecode/LRU-list.js)
 ## js
 - [1、有10个异步请求，如何保持同时3个并发？](./js/q1.js)
 
