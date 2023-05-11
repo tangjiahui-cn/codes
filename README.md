@@ -20,10 +20,12 @@ a code library for daily training.
 - [11、手写 ICompose](./handWriteSource/IPipeAsync.js)
 - [12、手写 IComposeAsync](./handWriteSource/IPipeAsync.js)
 - [13、手写 ISetTimeout](./handWriteSource/ISetTimeout.js)
-- [14、手写 IArrayPrototype（数组原型方法）](./handWriteSource/IArrayPrototype.js)
-- [15、手写 ICheckType（判断js元素类型方法）](./handWriteSource/ICheckType.js)
-- [16、手写 IAsync](./handWriteSource/IAsync.js)
+- [14、手写 ICheckType（判断js元素类型方法）](./handWriteSource/ICheckType.js)
+- [15、手写 IAsync](./handWriteSource/IAsync.js)
 - [16、手写 IInstancePool](./handWriteSource/IInstancePool.js)
+
+### ES
+- [1、手写 Array 全部方法](./handWriteSource//ES/Array.js)
 
 ## leecode
 ### hot100
