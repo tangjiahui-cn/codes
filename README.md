@@ -1,6 +1,9 @@
 # CODES
 a code library for daily training.
 
+## pattern
+- [1、原型模式](./pattern/1.prototype.js)
+- [2、发布订阅模式](./pattern/2.publish-subscribe.js)
 ## dataStructure
 - [1、线性表/栈](./dataStructure/List.js)
 - [2、链表](./dataStructure/NodeList.js)
