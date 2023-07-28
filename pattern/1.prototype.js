@@ -16,3 +16,4 @@ new fn().show();
 
 // 或者
 Object.create(obj).show();
+
