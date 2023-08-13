@@ -4,6 +4,11 @@ a code library for daily training.
 ## pattern
 - [1、原型模式](./pattern/1.prototype.js)
 - [2、发布订阅模式](./pattern/2.publish-subscribe.js)
+- [3、单例模式](./pattern/3.single.js)
+- [4、策略模式](./pattern/4.strategy.js)
+- [5、代理模式](./pattern/5.proxy.js)
+- [6、迭代器模式](./pattern/6.iterator.js)
+- [7、命令模式](./pattern/7.command.js)
 ## dataStructure
 - [1、线性表/栈](./dataStructure/List.js)
 - [2、链表](./dataStructure/NodeList.js)
