@@ -1,6 +1,9 @@
 # CODES
 a code library for daily training.
 
+## algorithm
+- [1、查找表](./algorithm/1.lookTable.js)
+
 ## pattern
 - [1、原型模式](./pattern/1.prototype.js)
 - [2、发布订阅模式](./pattern/2.publish-subscribe.js)
