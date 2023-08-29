@@ -12,6 +12,9 @@ a code library for daily training.
 - [5、代理模式](./pattern/5.proxy.js)
 - [6、迭代器模式](./pattern/6.iterator.js)
 - [7、命令模式](./pattern/7.command.js)
+- [8、模板模式](./pattern/8.template.js)
+- [9、享元模式](./pattern/9.fly-weight.js)
+- [10、责任链模式](./pattern/10.chain.js)
 ## dataStructure
 - [1、线性表/栈](./dataStructure/List.js)
 - [2、链表](./dataStructure/NodeList.js)
