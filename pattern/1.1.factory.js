@@ -1,8 +1,7 @@
 /**
  * 工厂模式
  * 
- * At 2023/09/04
- * By TangJiaHui
+ * 解释：创建多个不同的对象
  */
 class A {
   name = "a";
