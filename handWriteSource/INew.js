@@ -14,8 +14,9 @@
  */
 
 function myNew(fn, ...args) {
-    const o = {};
-    o.__proto__ = fn.prototype;
+    // const o = {};
+    // o.__proto__ = fn.prototype;
+    const o = Object.create(fn.prototype);
     const result = fn.apply(o, args);
 
     // result是执行构造函数的结果
