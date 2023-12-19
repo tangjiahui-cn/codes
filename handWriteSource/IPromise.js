@@ -37,7 +37,7 @@ class IPromise {
         } else {
             this._value = v
             this._status = STATUS.FULFILLED
-            this._fulfilledQueue.forEach(fn => fn?.(this.value))
+            this._fulfilledQueue.forEach(fn => fn?.())
         }
     }
 
@@ -45,7 +45,7 @@ class IPromise {
         if (this._status !== STATUS.PENDING) return
         this._value = v
         this._status = STATUS.REJECTED
-        this._rejectedQueue.forEach(fn => fn?.(this.value))
+        this._rejectedQueue.forEach(fn => fn?.())
     }
 
     then(resolveThen, rejectThen) {
