@@ -15,7 +15,7 @@ a code library for daily training.
 - 7、装饰模式
 - [8、代理模式](./pattern/2.3.proxy.js)
 - 9、外观模式
-- 10、接模式
+- 10、桥接模式
 - 11、组合模式
 - [12、享元模式](./pattern/2.7.fly-weight.js)
 - [13、策略模式](./pattern/3.1.strategy.js)
