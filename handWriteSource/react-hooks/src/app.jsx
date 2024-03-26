@@ -14,6 +14,7 @@ function reducer(state, action) {
 
 export default function App() {
   const refValue = useRef(0);
+  const refValue2 = useRef(0);
   const [value, setValue] = useState(0);
   const [value2, setValue2] = useState(0);
   const [value3, setValue3] = useState(0);
@@ -27,10 +28,18 @@ export default function App() {
     console.log("effect state", refValue.current);
   }, [state]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      console.log('闭包： ', value, refValue2.current);
+    }, 3000)
+  }, [])
+
   return (
     <div>
       <h1>{value}</h1>
-      <button onClick={() => setValue(value + 1)}> + 1 </button>
+      <button onClick={() => {
+        setValue(refValue2.current = value + 1)}
+      }> + 1 </button>
       <h1>{value2}</h1>
       <button onClick={() => setValue2(value2 + 1)}> + 1 </button>
       <h1>{value3}</h1>
