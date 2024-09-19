@@ -53,7 +53,8 @@ a code library for daily training.
 - [16、实现 IInstancePool](./handWriteSource/IInstancePool.js)
 - [17、实现 ISymbol](./handWriteSource/IInstancePool.js)
 - [18、实现 react-hooks](./handWriteSource/react-hooks/)
-- - [18、实现 ITimeUnit](./handWriteSource/ITimeUnit.js)
+- [19、实现 ITimeUnit](./handWriteSource/ITimeUnit.js)
+- [20、实现 IInstanceOf](./handWriteSource/IInstanceOf.js)
 
 ### ES
 - [1、手写 Array 全部方法](./handWriteSource//ES/Array.js)
